@@ -1,0 +1,73 @@
+---
+title: "Lists and steps"
+description: "Rules for bullet lists, numbered lists, steps, and when to use each."
+---
+
+## Lists
+
+Use bullet lists for unordered information and numbered lists for sequences. Keep list items parallel in structure. Every list needs at least two items. Format any list of more than three items as a list, not prose.
+
+### Periods in lists
+
+Use periods when list items contain full sentences. Omit periods when list items are phrases or fragments. Apply consistently across all items in the same list.
+
+<CodeGroup>
+```text Full sentences — use periods
+- Select Save to apply your changes. The dashboard exits edit mode.
+- Select Cancel to discard your changes.
+```
+
+```text Phrases — no periods
+- Daily
+- Weekly
+- Monthly
+```
+</CodeGroup>
+
+### Mixed-structure list items
+
+When a list item opens with a definition-style label followed by a full sentence of explanation, treat the item as a full sentence entry. Use a period at the end and lowercase after the colon.
+
+```text
+- **Blocking period:** The minimum time in seconds between consecutive alerts for the same condition. Set to 0 to allow back-to-back alerts.
+```
+
+### Ordered vs unordered
+
+Only use a numbered list if the items must be sequential. If they don't need to be in order, use a bulleted list.
+
+## Steps
+
+Each numbered step is one clear action. Never combine two actions in one step.
+
+### System responses are not steps
+
+If a step produces a visible result, describe it in the line immediately after the step. Don't number system responses.
+
+<CodeGroup>
+```text Wrong — system response numbered as a step
+1. Select Save.
+2. The dashboard refreshes.
+3. Select Edit.
+```
+
+```text Right — system response after the step
+1. Select **Save**.
+
+   The dashboard refreshes and displays your changes.
+
+2. Select **Edit**.
+```
+</CodeGroup>
+
+<Warning>
+Never use a numbered list for unordered information. If the items can be followed in any order, use bullets.
+</Warning>
+
+### Step prerequisites
+
+Give the reader all prerequisites before the procedure starts, not inside individual steps. Each step should contain one action and nothing else.
+
+## Tables
+
+Use tables for parameter lists, option comparisons, and reference data. Don't use tables for layout. Keep headers short and descriptive. Every table needs a description paragraph above it.

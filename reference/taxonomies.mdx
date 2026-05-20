@@ -1,0 +1,51 @@
+---
+title: "Taxonomies"
+description: "How to use taxonomies to make documentation findable across large content sets."
+---
+
+A taxonomy is a controlled vocabulary used to tag content so users can find it by browsing or searching. As documentation sets grow, taxonomy becomes one of the most important tools for findability.
+
+## Why taxonomies matter
+
+Technical documentation has moved from print to online. Print used a table of contents and a back-of-book index. Neither works well online. Alphabetical indexes require users to already know the term they're looking for. Taxonomies solve this.
+
+## Taxonomy advantages over indexes
+
+- Hierarchical trees let users drill down from broad to specific without knowing the exact term
+- Faceted search lets users filter by multiple dimensions simultaneously
+- Tagging is simpler to maintain than indexing because the terms and cross-references are pre-established
+- The same taxonomy can apply across the entire organization, not just documentation
+
+## Facets for technical documentation
+
+Facets are the dimensions by which users filter content. Common facets for developer documentation include:
+
+| Facet | Examples |
+|---|---|
+| User audience | Beginner, advanced, administrator, developer |
+| Content type | Tutorial, how-to, reference, concept |
+| Product or module | Core, API, Dashboard |
+| Feature or function | Authentication, Billing, Alerts |
+| Topic | Installation, Configuration, Troubleshooting |
+
+## Serving diverse users
+
+The same documentation often serves multiple audiences: customers, prospective customers, support agents, consultants, product managers, and engineers. A well-designed taxonomy adapts to different user groups through different interfaces.
+
+An advanced search can expose more metadata. A simplified interface can show only the facets most relevant to a specific audience.
+
+## Tagging in practice
+
+In docs-as-code workflows, tagging happens at the page or component level using frontmatter metadata. This makes tagging straightforward and allows writers, editors, and content managers to tag content themselves.
+
+```yaml
+---
+title: "Set up authentication"
+audience: developer
+content_type: how-to
+product: api
+feature: authentication
+---
+```
+
+Good tagging makes search more precise and allows documentation portals to surface the right content for each user's context automatically.

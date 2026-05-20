@@ -1,0 +1,121 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Hackmamba Documentation Style Guide",
+  "logo": {
+    "light": "/logo/hackmamba-light.svg",
+    "dark": "/logo/hackmamba-dark.svg"
+  },
+  "favicon": "/logo/favicon.png",
+  "colors": {
+    "primary": "#17023F",
+    "light": "#6B21A8",
+    "dark": "#17023F",
+    "background": {
+      "light": "#F6F6F6",
+      "dark": "#0A0014"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "overview/introduction",
+              "overview/six-standards",
+              "overview/rubric-and-guardrails"
+            ]
+          },
+          {
+            "group": "Principles",
+            "pages": [
+              "principles/user-focused",
+              "principles/cognitive-load",
+              "principles/developer-mindset",
+              "principles/information-architecture",
+              "principles/journey-mapping",
+              "principles/storytelling"
+            ]
+          },
+          {
+            "group": "Writing rules",
+            "pages": [
+              "writing-rules/voice-tense-person",
+              "writing-rules/sentence-paragraph",
+              "writing-rules/headings",
+              "writing-rules/lists-and-steps",
+              "writing-rules/code",
+              "writing-rules/ui-text-and-bold",
+              "writing-rules/links-and-signposting",
+              "writing-rules/notes-warnings-tables",
+              "writing-rules/banned-words"
+            ]
+          },
+          {
+            "group": "Content types",
+            "pages": [
+              "content-types/diataxis",
+              "content-types/tutorials",
+              "content-types/how-to-guides",
+              "content-types/api-reference",
+              "content-types/troubleshooting"
+            ]
+          },
+          {
+            "group": "API documentation",
+            "pages": [
+              "api-docs/rest-concepts",
+              "api-docs/best-practices",
+              "api-docs/code-examples"
+            ]
+          },
+          {
+            "group": "Tooling",
+            "pages": [
+              "tooling/vale-cspell",
+              "tooling/github-actions",
+              "tooling/mintlify",
+              "tooling/versioning"
+            ]
+          },
+          {
+            "group": "Collaboration",
+            "pages": [
+              "collaboration/sme-collaboration",
+              "collaboration/docs-as-code",
+              "collaboration/technical-reviews"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "reference/editing-checklist",
+              "reference/seven-action-model",
+              "reference/taxonomies",
+              "reference/font-formatting"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Changelog",
+            "pages": [
+              "reference/changelog"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "twitter": "https://twitter.com/hackmamba",
+      "website": "https://hackmamba.io"
+    }
+  }
+}

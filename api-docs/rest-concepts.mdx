@@ -1,0 +1,59 @@
+---
+title: "REST concepts"
+description: "The core concepts behind REST APIs that every documentation writer needs to understand."
+---
+
+REST (Representational State Transfer) is an architectural style for APIs. It uses standard HTTP methods and human-readable URLs. REST is not a protocol. It's a set of architectural constraints.
+
+The essence of APIs is requests and responses. A system on the left, a system on the right, and the API is the interface that connects them.
+
+## Five HTTP methods
+
+| Method | Maps to | Use for |
+|---|---|---|
+| `GET` | Read | Retrieving resources. Safe and idempotent. Never use GET to modify data. |
+| `POST` | Create | Creating new resources or triggering actions. Returns 201 Created. |
+| `PUT` | Update (full) | Replacing a resource entirely. |
+| `PATCH` | Update (partial) | Updating specific properties without overwriting others. |
+| `DELETE` | Delete | Removing a resource. |
+
+## Key REST concepts
+
+**Resource:** the fundamental concept in REST. An object with a type, associated data, and relationships to other resources.
+
+**Endpoint:** the URL that identifies a specific resource. Use nouns only. HTTP methods handle the verbs.
+
+**Parameters:** how you send additional data with a request.
+- Path parameters: part of the URL, for example `/users/{USER_ID}`
+- Query parameters: after the question mark, for example `/users?role=admin`
+- Header parameters: authentication and metadata, for example `Authorization: Bearer YOUR_TOKEN`
+- Request body: POST and PATCH data, usually JSON
+
+**Authentication:** verifies identity. Common methods include API keys, OAuth 2.0, and Bearer tokens.
+
+**Status codes:** tells the client what happened.
+
+| Code | Meaning |
+|---|---|
+| 200 | OK |
+| 201 | Created |
+| 400 | Bad Request: the client sent invalid data |
+| 401 | Unauthorized: authentication failed |
+| 403 | Forbidden: authenticated but not permitted |
+| 404 | Not Found |
+| 429 | Too Many Requests: rate limit exceeded |
+| 500 | Internal Server Error |
+
+## URL naming rules
+
+Use nouns, not verbs in URLs. The HTTP method is the verb.
+
+| Wrong | Right |
+|---|---|
+| `GET /getUsers` | `GET /users` |
+| `POST /createUser` | `POST /users` |
+| `DELETE /deleteUser/123` | `DELETE /users/123` |
+
+Nested resources follow the parent path: `GET /articles/{id}/comments`.
+
+Use consistent naming conventions throughout. If you use snake_case in one endpoint, use it everywhere.

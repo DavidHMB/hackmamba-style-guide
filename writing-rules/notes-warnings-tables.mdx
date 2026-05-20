@@ -1,0 +1,60 @@
+---
+title: "Notes, warnings, and tables"
+description: "Rules for callout blocks, notes, warnings, and table formatting."
+---
+
+## Callout blocks
+
+Use callouts strategically. Don't overuse them. When every other paragraph is a callout, none of them stand out.
+
+| Block type | When to use |
+|---|---|
+| **Note** | Information that prevents a common mistake |
+| **Warning** | Actions that are irreversible or have significant consequences |
+| **Tip** | Optional shortcuts or best practices that help but aren't required |
+| **Info** | Contextual information the reader should be aware of |
+
+Place callouts immediately after the step or statement they relate to.
+
+## Notes
+
+Use a Note block for information that prevents a common mistake. Not for general background.
+
+<Note>
+This is an example of a Note block. Use it when the reader needs to know something before continuing to avoid a common error.
+</Note>
+
+## Warnings
+
+Use a Warning block for actions that are irreversible, have significant consequences, or could cause data loss.
+
+<Warning>
+This is an example of a Warning block. Use it when the action cannot be undone or has serious consequences.
+</Warning>
+
+## Tables
+
+Use tables for:
+- Parameter lists
+- Option comparisons
+- Reference data where multiple attributes describe the same item
+
+Don't use tables for layout or for content that reads naturally as prose.
+
+### Table formatting rules
+
+- Keep headers short and descriptive
+- Every table needs a description paragraph above it
+- Align columns consistently
+- Don't merge cells unless absolutely necessary
+
+### Parameters table example
+
+The `createUser` endpoint accepts the following parameters.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `email` | string | Yes | The user's email address |
+| `name` | string | Yes | The user's display name |
+| `role` | string | No | The user's role. Defaults to `viewer`. |
+| `notify` | boolean | No | If `true`, sends a welcome email. Defaults to `false`. |

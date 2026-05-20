@@ -1,0 +1,60 @@
+---
+title: "User-focused writing"
+description: "How to write for what users need to accomplish, not what the product contains."
+---
+
+User-focused writing is the most important principle and the easiest to get wrong. It means writing for what the user wants to do, not what the tool is.
+
+## Tool-focused vs user-focused
+
+Tool-focused documentation describes features. User-focused documentation describes tasks and outcomes.
+
+| Tool-focused (wrong) | User-focused (right) |
+|---|---|
+| Table Editor | Edit a table |
+| Metrics Tool | Count records in a file |
+| Alert Configuration Panel | Configure an alert |
+| User Permissions | Set up user access |
+
+Read every heading and section intro you write. If it describes the product, rewrite it to describe what the user will accomplish.
+
+<Tip>
+The [Headings](/writing-rules/headings) page covers the exact naming conventions that enforce user-focused titles: bare infinitives for tasks, noun phrases for concepts.
+</Tip>
+
+## Organize by user intent
+
+Structure documentation around what users are trying to do, not around the product menu or feature list. Users searching your docs are trying to solve a problem. They search for "how do I X," not "where is the X feature."
+
+Good organization: "I want to migrate from X", "I need to integrate with Y", "I'm trying to solve Z."
+
+Bad organization: tabs that mirror the product's internal navigation structure.
+
+## The gotchas section
+
+Maintain a living section of edge cases, limitations, and common mistakes built from real user problems. Sources include:
+- GitHub issues and pull request discussions
+- Discord and Slack support channels
+- Support tickets
+- Stack Overflow questions
+
+This section is one of the highest-value additions you can make to any documentation set. It reflects real usage, not ideal usage.
+
+## What developers actually need
+
+Developers using your documentation need these things, in roughly this order of priority.
+
+1. A working getting started guide that delivers a first result in minutes
+2. Real-world implementation examples, not abstract feature descriptions
+3. Known limitations and workarounds documented honestly
+4. Performance implications and trade-offs
+5. Migration guides from competing tools
+6. Integration patterns with tools they already use
+7. Clear troubleshooting for the errors they'll actually encounter
+
+## Every page is a front door
+
+People arrive at documentation from search engines, shared links, and Slack messages. They don't read top to bottom. Every page needs:
+- A clear statement of what the page covers
+- Enough context to orient a reader who hasn't read the pages before it
+- Obvious links to related content the reader might need next

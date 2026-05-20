@@ -1,0 +1,78 @@
+---
+title: "Versioning and Docusaurus"
+description: "How to manage versioned documentation and build sites with Docusaurus."
+---
+
+## Versioning with Read the Docs
+
+Every documentation project that has multiple releases needs a versioning strategy.
+
+**Core versioning rules:**
+
+- Publish a separate `latest` version pointing to the most up-to-date development code
+- Publish a separate `stable` version pointing to the most recent release tag
+- Never make a development branch your default version. Users will read unreleased instructions.
+- Keep development versions hidden so they don't appear in search results
+- Use semantic versioning for tags: `1.4.2`, not descriptive names
+
+**Versioning strategy:**
+
+Maintain separate Git branches for each release version. When ready to release, create a new branch named after the version (for example, `v4.0`). Apply hotfixes to the release branch, not only to main.
+
+## Redirects when moving pages
+
+Every page that moves needs a redirect. People link to your documentation from emails, issues, and articles you don't control.
+
+- The simple approach: redirect all old URLs to the latest version
+- The user-friendly approach: map each deprecated page to the corresponding new page
+
+Establish what `latest` and `stable` mean at the beginning of a project. Changing their meaning later breaks incoming links.
+
+Use minimal filenames that don't require renaming often. Renaming an article's title is fine. Renaming the URL is disruptive.
+
+## Docusaurus
+
+Docusaurus is a static-site generator built by Meta. It builds a single-page application using React, optimized for documentation sites.
+
+**When to use Docusaurus:**
+- You need versioning support
+- Your team writes in Markdown and knows React
+- You're deploying to GitHub Pages or Vercel
+- You want built-in search and localization
+
+### Setup
+
+```bash
+npx create-docusaurus@latest my-docs classic
+cd my-docs
+npm run start
+```
+
+Site runs at `http://localhost:3000`.
+
+### Key files
+
+| File | Purpose |
+|---|---|
+| `docusaurus.config.js` | Site configuration, navbar, footer, theme |
+| `sidebars.js` | Sidebar navigation structure |
+| `docs/` | Markdown documentation files |
+| `static/` | Static assets (images, fonts) |
+
+### Docs-only mode
+
+```javascript
+presets: [['classic', {
+  docs: { routeBasePath: '/' },
+  blog: false,
+}]]
+```
+
+### Platform comparison
+
+| Platform | Best for |
+|---|---|
+| Mintlify | Developer-facing API docs with AI search |
+| Docusaurus | Open source projects needing versioning and React |
+| MkDocs | Python projects and simpler documentation sets |
+| GitBook | Collaborative editing and non-technical teams |

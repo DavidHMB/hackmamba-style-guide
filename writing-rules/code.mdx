@@ -1,0 +1,97 @@
+---
+title: "Code"
+description: "Rules for code blocks, inline code, placeholders, and example requests."
+---
+
+## Code blocks
+
+Specify the language after every code fence. Never leave a bare set of backticks.
+
+<CodeGroup>
+```bash Right — language specified
+npm install openai
+```
+
+````text Wrong — no language
+```
+npm install openai
+```
+````
+</CodeGroup>
+
+## No dollar sign before commands
+
+Never use `$` before commands. The `$` implies a specific shell and confuses Windows users.
+
+<CodeGroup>
+```bash Right
+npm install openai
+```
+
+```bash Wrong
+$ npm install openai
+```
+</CodeGroup>
+
+## Placeholders in ALL CAPS
+
+All placeholders go in ALL CAPS so users can identify what to replace.
+
+```bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  https://api.example.com/v1/users/USER_ID
+```
+
+## Comment out expected output
+
+Comment out expected output in code blocks so developers know it's not a command and can copy the full block without errors.
+
+```bash
+git lfs install
+# Git LFS initialized.
+
+git lfs track "*.png"
+# Tracking "*.png"
+```
+
+## Text before every code block
+
+Provide explanatory text before every code block. Never drop a code block directly under a heading with no prose between them.
+
+<CodeGroup>
+```text Wrong — code block immediately after heading
+
+## Install the package
+
+```bash
+npm install @openai/sdk
+```
+```
+
+```text Right — prose before code block
+
+## Install the package
+
+Run the following command to add the SDK to your project.
+
+```bash
+npm install @openai/sdk
+```
+```
+</CodeGroup>
+
+## Inline code
+
+Use inline code formatting for all technical terms that appear in prose: parameter names, field names, header names, file names, status codes, environment variables, and any string the developer types or copies.
+
+Examples: the `Authorization` header, the `USER_ID` parameter, the `.env` file, a `200 OK` response.
+
+## Complete and copy-pasteable examples
+
+Every code example must be complete, tested, and easy to adapt. A developer should be able to copy and paste it and run it without modification. Never include broken or untested examples.
+
+Always show both the request and the expected response together so readers know what to expect.
+
+<Note>
+The active voice and second person rules in [Voice, tense, and person](/writing-rules/voice-tense-person) apply to inline code comments too. Write comments as direct instructions, not passive descriptions.
+</Note>

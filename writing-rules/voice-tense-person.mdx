@@ -1,0 +1,98 @@
+---
+title: "Voice, tense, and person"
+description: "The foundational rules for how every sentence in your documentation should be written."
+---
+
+## Active voice
+
+Write in active voice. The subject performs the action.
+
+<CodeGroup>
+```text Wrong
+The token is stored in the .env file.
+The configuration is updated by the script.
+```
+
+```text Right
+Store the token in the .env file.
+The script updates the configuration.
+```
+</CodeGroup>
+
+## Second person
+
+Write in second person throughout. Use "you" and "your." Never use "we," "let's," or "our" unless quoting a UI element.
+
+<CodeGroup>
+```text Wrong
+We recommend enabling two-factor authentication.
+Let's set up the environment first.
+```
+
+```text Right
+Enable two-factor authentication before continuing.
+Set up the environment before you install the package.
+```
+</CodeGroup>
+
+<Warning>
+Instructions starting with "we" or "our" almost always lead to passive voice. Use "you" instead.
+</Warning>
+
+## Present tense
+
+Write in present tense throughout. No future tense.
+
+<CodeGroup>
+```text Wrong
+The script will return a JSON response.
+The window will open in a new tab.
+```
+
+```text Right
+The script returns a JSON response.
+The window opens in a new tab.
+```
+</CodeGroup>
+
+## May and might
+
+Use the right modal for the right meaning.
+
+| Word | Use for | Example |
+|---|---|---|
+| **may** | Permission | "You may skip this step if you already have a token." |
+| **might** | Possibility | "This might cause a build failure." |
+
+## Contractions
+
+Use contractions naturally throughout. Don't use formal constructions like "do not" and "it is" unless surrounding sentences already use a contraction.
+
+Write "you'll need to," "it's important," "don't forget." Avoid formal constructions like "you will need to," "it is important," and "do not forget."
+
+## Hidden verbs
+
+Convert verb-noun constructions back to plain verbs.
+
+| Wrong | Right |
+|---|---|
+| conduct an analysis of | analyze |
+| provide a summary of | summarize |
+| make a decision | decide |
+| perform a review of | review |
+
+Hidden verbs add length without adding meaning. They are almost always passive in effect even when grammatically active.
+
+## Plural antecedents
+
+Use plural antecedents to avoid gendered singular pronouns.
+
+<CodeGroup>
+```text Wrong
+A developer configures his settings in the dashboard.
+```
+
+```text Right
+Developers configure their settings in the dashboard.
+```
+</CodeGroup>

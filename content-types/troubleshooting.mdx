@@ -1,0 +1,65 @@
+---
+title: "Troubleshooting"
+description: "How to write troubleshooting documentation that helps users solve problems."
+---
+
+Troubleshooting is the most neglected documentation type in traditional frameworks. Users who hit problems are frustrated. Good troubleshooting documentation is specific, scannable, and actionable.
+
+## Structure troubleshooting by symptom
+
+Organize by what the user sees, not by internal system categories. Users searching for an error don't know which component caused it. They search for the exact error message or the symptom they're experiencing.
+
+Use exact error messages as headings where possible. They're searchable and unambiguous.
+
+## Each entry structure
+
+Every troubleshooting entry must have three parts.
+
+| Part | Content |
+|---|---|
+| **Error or symptom** | Exact error message or description of what the user sees |
+| **Cause** | Why this happens |
+| **Fix** | Step-by-step resolution |
+
+## Example entry
+
+<AccordionGroup>
+  <Accordion title="Error: Invalid API key">
+    **Cause:** Your API key is either incorrect, expired, or belongs to a different environment.
+
+    **Fix:**
+
+    1. Select **Settings** in the left sidebar.
+    2. Select **API keys**.
+    3. Verify that the key you're using matches the one shown.
+    4. If the key is expired, select **Regenerate** and update your configuration.
+  </Accordion>
+  <Accordion title="Error: Rate limit exceeded">
+    **Cause:** You've made more than 100 requests per minute on the free plan.
+
+    **Fix:**
+
+    Add a 1-second delay between requests using `setTimeout` in JavaScript or `time.sleep(1)` in Python. For higher limits, upgrade to the Pro plan.
+  </Accordion>
+</AccordionGroup>
+
+## How to find what to document
+
+The best troubleshooting content comes from real user problems.
+
+- Review support tickets regularly to identify the most common questions
+- Check GitHub issues for recurring errors
+- Review Discord and Slack support channels for repeated questions
+- When something confuses you during product testing, document it. If it confused you, then it will confuse users.
+
+## Teach users to troubleshoot, not just to fix
+
+The most effective troubleshooting documentation doesn't just list quick fixes. It teaches users how to think about diagnosing problems with the product. When users understand how to diagnose a class of problem, they can solve variations you haven't documented yet.
+
+For complex products, include a diagnostic flow that walks users through identifying the root cause before jumping to fixes.
+
+## Document limitations inline
+
+Document known limitations where users will encounter them, not only in a separate troubleshooting section. If a feature has a known edge case or limitation, document it on the page where users will discover that feature.
+
+An omission is better than an error. If you can't verify a claim, don't include it.

@@ -1,0 +1,123 @@
+---
+title: "Vale and cSpell"
+description: "How to set up Vale for style linting and cSpell for spell checking in your documentation workflow."
+---
+
+Vale handles style compliance. cSpell handles spelling. Use both together for complete automated quality checks.
+
+## Vale
+
+Vale is a prose linter. It checks content against style guide rules automatically and integrates into your CI/CD pipeline.
+
+**What Vale checks:**
+- Passive voice
+- Banned words and phrases
+- Heading capitalisation
+- Sentence length
+- Jargon
+
+**Three alert levels:**
+
+| Level | What it means | Action required |
+|---|---|---|
+| Error | Branding guidelines or rendering issues | Must fix before merging |
+| Warning | General style guide rules | Should fix |
+| Suggestion | Style preferences | Consider fixing |
+
+### Core configuration
+
+Create a `.vale.ini` file in your project root.
+
+```ini
+StylesPath = styles
+MinAlertLevel = warning
+
+[*.md]
+BasedOnStyles = Google
+```
+
+### Install and run
+
+```bash
+# macOS
+brew install vale
+
+# Sync style packages
+vale sync
+
+# Lint your docs folder
+vale docs/
+```
+
+### GitHub Actions integration
+
+```yaml
+name: Lint docs with Vale
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  vale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: errata-ai/vale-action@reviewdog
+        with:
+          files: docs/
+          vale_flags: "--config=.vale.ini"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### Custom rules
+
+Vale allows custom YAML rule files. Use them to enforce product-specific terminology, banned phrases, and naming conventions beyond what the Google or Microsoft styles provide.
+
+## cSpell
+
+cSpell is a code-aware spell checker. It understands technical terms, ignores code blocks, and integrates into CI.
+
+### GitHub Actions integration
+
+```yaml
+name: Spell check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: streetsidesoftware/cspell-action@v6
+        with:
+          files: "docs/**/*.md"
+```
+
+### Whitelist technical terms
+
+Create a `cspell.json` file to add product names, technical terms, and abbreviations that cSpell would otherwise flag.
+
+```json
+{
+  "words": ["Mintlify", "Docusaurus", "OpenAPI", "NDAA", "mdx"]
+}
+```
+
+## Full quality workflow
+
+Run all three tools together for complete coverage.
+
+| Tool | Checks |
+|---|---|
+| Vale | Style compliance, banned words, passive voice, heading case |
+| cSpell | Spelling and technical term accuracy |
+| LanguageTool | Grammar errors the other tools don't catch |
+
+For local work without CI, install the cSpell extension for VS Code and run Vale from the terminal before submitting.

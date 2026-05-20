@@ -1,0 +1,74 @@
+---
+title: "Mintlify"
+description: "How to configure and build documentation sites with Mintlify."
+---
+
+Mintlify is a documentation platform built for developer-facing products. It provides built-in search, AI-assisted navigation, and a component library that makes complex documentation easier to present.
+
+## docs.json configuration
+
+All navigation is defined in `docs.json`. This file replaced `mint.json` in February 2025. Always use `docs.json`.
+
+```json
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Your Product Docs",
+  "colors": {
+    "primary": "#17023F",
+    "light": "#6B21A8",
+    "dark": "#17023F",
+    "background": {
+      "light": "#F6F6F6"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["docs/introduction", "docs/quickstart"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## File format
+
+Always use `.mdx` for pages. Plain `.md` won't render Mintlify components.
+
+Page paths in `docs.json` reference files without the `.mdx` extension. Navigation must match the actual file structure exactly.
+
+## Component usage rules
+
+Use Mintlify components where the content genuinely calls for it. If a plain paragraph does the job, use a plain paragraph.
+
+| Component | When to use |
+|---|---|
+| `Steps` | All procedural content |
+| `Tabs` | Content that varies by language, platform, or environment |
+| `AccordionGroup` | Supplementary detail that would clutter the main flow |
+| `CardGroup` | Navigation entry points on landing pages |
+| `CodeGroup` | Code examples in multiple languages |
+| `Note`, `Warning`, `Tip` | Important context that needs to stand out |
+
+## Migration checklist
+
+When migrating from another platform to Mintlify:
+
+- [ ] Export existing content to Markdown
+- [ ] Update navigation in `docs.json` when you add or move files
+- [ ] Verify navigation paths match actual file structure
+- [ ] Reference your OpenAPI file correctly or API sections won't generate
+- [ ] Check that `llms.txt` is generating correctly for AI discoverability
+- [ ] Don't overuse Tabs and Accordions. Too many overwhelm users.
+
+## Git Sync
+
+Git Sync connects your Mintlify space to a GitHub repository. It operates at the space level. When you push to the configured branch, the live site updates immediately.
+
+Use GitBook change requests or GitHub pull requests for review workflows. Never commit directly to the main branch without review.

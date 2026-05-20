@@ -1,0 +1,111 @@
+---
+title: "Tutorials"
+description: "How to structure and write a tutorial that teaches by doing."
+---
+
+A tutorial is learning-oriented. The user builds understanding by completing a task. The writer controls the sequence. Use a tutorial for someone who is new to the product or to a specific workflow.
+
+## Required page structure
+
+Every tutorial must include these sections in this order.
+
+<Steps>
+  <Step title="Introduction">
+    Apply the Pixar formula: situation, obstacle, promise. State what the reader will accomplish by the end of the tutorial.
+  </Step>
+  <Step title="Prerequisites">
+    List what the reader needs before starting. Link every tool and resource. Include required versions.
+  </Step>
+  <Step title="Steps">
+    One numbered list under one procedure heading. Not individual H2 headings per step. Each step is one action.
+  </Step>
+  <Step title="Expected output">
+    After every step that produces a visible result, show what the reader should see.
+  </Step>
+  <Step title="Troubleshooting">
+    At least three common errors with their cause and fix.
+  </Step>
+  <Step title="Next steps">
+    Add a Next steps section to tutorials. Tell the user what they can do now that they've completed the tutorial.
+  </Step>
+</Steps>
+
+<Note>
+Next steps are recommended for tutorials. On most other page types, the platform navigation handles forward movement.
+</Note>
+
+## Introduction example
+
+Apply the Pixar formula. Here's a strong introduction structure.
+
+```text
+You're building an application that processes data from multiple sources.
+A single API request returns only 100 records, which means
+you have to make repeated requests and combine the results manually.
+
+This tutorial shows you how to use cursor-based pagination to fetch
+all records from the API in a single automated loop.
+```
+
+Compare this to a weak introduction:
+
+```text
+This tutorial explains how to use cursor-based pagination.
+Cursor-based pagination is a method for retrieving large datasets.
+```
+
+The strong version names the situation, the obstacle, and the outcome. The weak version describes the feature.
+
+## Writing steps correctly
+
+Use a single procedure heading, then a numbered list. Don't give each step its own H2 heading.
+
+<CodeGroup>
+```text Wrong — each step as an H2
+## Step 1: Install the package
+Run the install command.
+
+## Step 2: Configure authentication
+Add your API key.
+```
+
+```text Right — one procedure heading with numbered steps
+## Set up the integration
+
+1. Install the package.
+
+   ```bash
+   npm install @example/sdk
+   ```
+
+2. Add your API key to the `.env` file.
+
+   ```bash
+   API_KEY=YOUR_API_KEY
+   ```
+
+   The `.env` file now contains your credentials.
+```
+</CodeGroup>
+
+## Troubleshooting section
+
+Include at least three common errors. Structure each entry with the error, the cause, and the fix.
+
+```text
+**Error: `Invalid API key`**
+Your API key is either incorrect or expired.
+Generate a new key in your dashboard under **Settings > API keys**.
+
+**Error: `Rate limit exceeded`**
+You've made more than 100 requests per minute.
+Add a delay of 1 second between requests and retry.
+
+**Error: `Module not found: @example/sdk`**
+The package wasn't installed or the installation failed.
+Run `npm install @example/sdk` and check that the package appears in your `package.json`.
+```
+
+<Note>
+Tutorials satisfy the **Practice** action in the [seven action model](/reference/seven-action-model). The more thoroughly a user practices with your tutorial, the more likely they are to become a product advocate.
+</Note>

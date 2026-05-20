@@ -1,0 +1,95 @@
+---
+title: "Editing checklist"
+description: "Run every page through this checklist before submitting to your reviewer."
+---
+
+Run every page through this checklist before submitting. If any item fails, revise before publishing.
+
+## Before you start
+
+- [ ] Review the relevant style guide before you begin writing or editing
+- [ ] When editing your own work, put it aside before reviewing. Read it aloud. The ear catches what the eye misses.
+- [ ] Run Vale for style compliance, cSpell for spelling, and LanguageTool for grammar
+- [ ] Test all links
+
+## User-focused
+
+- [ ] Every heading uses a bare infinitive or noun phrase and describes a task or outcome, not a product feature
+- [ ] Every section intro tells the user what they'll accomplish
+- [ ] No heading names a feature, panel, or tool without connecting it to a user goal
+- [ ] Content is structured around the user's task flow, not the product menu
+
+## Trustworthy
+
+- [ ] Every step has been performed in the live product before publishing
+- [ ] Every claim is verified against the live product or a confirmed source
+- [ ] All product names are spelled exactly as specified
+- [ ] All UI labels, buttons, and error messages match the live product exactly
+- [ ] All code samples run successfully in the documented environment
+- [ ] Expected output matches what the reader will actually see
+
+## Easy to understand
+
+- [ ] Every sentence is plain, active, and direct
+- [ ] No sentence exceeds 25 words
+- [ ] No passive voice anywhere on the page
+- [ ] No jargon or unnecessarily complex vocabulary
+- [ ] Sentence length varies naturally
+- [ ] No banned words or phrases
+- [ ] Sparingly-used words appear a maximum of two to three times per page
+- [ ] No mechanical transitions
+- [ ] "Where" is not used to connect clauses
+- [ ] No extra empty lines between paragraphs or sections
+
+## Easy to find
+
+- [ ] Each section stands on its own
+- [ ] Headings follow the task sequence, not the product menu structure
+- [ ] Cross-links appear at the point where the user needs them
+- [ ] Inline linking is the default
+- [ ] All link text is descriptive. No "click here" or raw URLs
+- [ ] Transitions appear only in conceptual content
+- [ ] Any reference list at the end has an introductory sentence
+
+## Usability
+
+- [ ] Each numbered step contains one clear action
+- [ ] System responses are not steps. Results are described after the step, not numbered.
+- [ ] Every step that produces a visible result describes that result immediately
+- [ ] Every option is explained: what it means and when to use it
+- [ ] Notes and warnings appear immediately after the step they relate to
+- [ ] Every list has at least two items
+- [ ] Any list of more than three items is formatted as a list, not prose
+- [ ] Numbered lists are used only for sequences
+- [ ] Placeholders are in ALL CAPS
+- [ ] No `$` before commands
+- [ ] Language is specified after every code fence
+- [ ] Output is commented out in code blocks
+- [ ] Explanatory text appears before every code block
+
+## Style compliance
+
+- [ ] Active voice throughout. No passive constructions.
+- [ ] Second person throughout. "We" and "let's" don't appear.
+- [ ] Present tense throughout. No future tense.
+- [ ] All headings are sentence case.
+- [ ] Every heading has at least one paragraph beneath it. No stacked headings.
+- [ ] Bold is used only for UI elements and critical terms, not for general emphasis.
+- [ ] UI elements are bold without quotation marks.
+- [ ] Colons appear outside bold formatting.
+- [ ] "Select" is used for all UI interactions. "Click" doesn't appear.
+- [ ] "Enter" is used for form fields. "Add" is not used for form fields.
+- [ ] "May" is used for permission. "Might" is used for possibility.
+- [ ] Every "if" clause includes "then" in the predicate.
+- [ ] No em-dashes anywhere. Verified with `grep -n "—"`.
+- [ ] Contractions are used naturally.
+- [ ] All list items are parallel in structure and punctuation.
+- [ ] "E.g." and "i.e." don't appear.
+- [ ] No banned words, phrases, or mechanical transitions.
+- [ ] "The following" is not used as a vague introducer.
+
+## File and folder structure
+
+- [ ] One image folder in the root directory of the documentation project
+- [ ] Folder structure mirrors the documentation organization (Tab > Section > Subsection)
+- [ ] Maximum three levels of folder depth

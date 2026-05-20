@@ -1,0 +1,84 @@
+---
+title: "Code examples"
+description: "How to write, test, and present code examples in documentation."
+---
+
+Code examples are how developers learn. A well-written code example communicates more than a paragraph of explanation. A broken or incomplete one destroys trust.
+
+## Treat code like writing
+
+Apply the same standards to code that you apply to prose. Use consistent naming conventions, consistent indentation, and consistent placement of comments. If your documentation has a style guide for prose, it needs one for code too.
+
+## Every example must be complete
+
+A developer should be able to copy the example, paste it into their environment, and run it without modification. Never include partial examples, pseudocode, or examples you haven't tested.
+
+```bash
+# Right — complete and runnable
+curl -X GET https://api.example.com/v1/users \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"
+```
+
+## Show inputs and outputs together
+
+Always show both the request and the expected response so developers know what to expect.
+
+**Request:**
+
+```bash
+curl -X POST https://api.example.com/v1/users \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"email": "USER_EMAIL", "name": "USER_NAME"}'
+```
+
+**Response:**
+
+```json
+{
+  "id": "usr_01HXYZ",
+  "email": "user@example.com",
+  "name": "Jane Smith",
+  "created_at": "2024-03-15T10:30:00Z"
+}
+```
+
+## Multi-language support
+
+Provide examples in multiple languages where your tool supports them. Developers work in specific stacks. A Python developer shouldn't have to translate a JavaScript example.
+
+<CodeGroup>
+```python Python
+import requests
+
+response = requests.get(
+    "https://api.example.com/v1/users",
+    headers={"Authorization": "Bearer YOUR_API_KEY"}
+)
+print(response.json())
+```
+
+```javascript JavaScript
+const response = await fetch("https://api.example.com/v1/users", {
+  headers: { Authorization: "Bearer YOUR_API_KEY" }
+});
+const data = await response.json();
+console.log(data);
+```
+
+```bash cURL
+curl -X GET https://api.example.com/v1/users \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+</CodeGroup>
+
+## Keep examples up to date
+
+Stale code examples are worse than no examples. Set up automated testing for code examples in your CI/CD pipeline so they break the build when they go out of date, rather than silently misleading users.
+
+## Inline code in prose
+
+Use inline code formatting for all technical terms in prose: parameter names, field names, file names, environment variables, status codes, method names. This makes them scannable and copy-pasteable.
+
+The `Authorization` header takes a Bearer token. Store the token in the `API_KEY` environment variable.

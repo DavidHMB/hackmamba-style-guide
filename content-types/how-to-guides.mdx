@@ -1,0 +1,74 @@
+---
+title: "How-to guides"
+description: "How to structure a task-focused guide for users who already know the basics."
+---
+
+A how-to guide is goal-oriented. It assumes the reader already has experience with the product and wants to accomplish a specific task. It doesn't teach. It guides.
+
+## Required page structure
+
+Every how-to guide must follow this structure. Each section is required.
+
+| Section | Purpose |
+|---|---|
+| **Introduction** | State what the reader will accomplish. Be specific about the outcome. |
+| **Prerequisites** | List what the reader needs before starting. Include access requirements and versions. |
+| **Steps** | Numbered list. One action per step. Describe the visible result after steps that produce one. |
+
+<Note>
+How-to guides don't need a Next steps section unless the page is part of a sequence where the next step isn't obvious from the platform navigation.
+</Note>
+
+## Introduction
+
+State the outcome directly. Don't describe the feature or provide background.
+
+<CodeGroup>
+```text Right
+This guide shows you how to connect your Slack workspace to receive alert notifications.
+```
+
+```text Wrong
+Slack is a messaging platform. Integration allows you to receive notifications.
+```
+</CodeGroup>
+
+## Prerequisites
+
+List everything the reader needs before starting.
+
+```text
+Before you begin:
+- You need admin access to your account.
+- You need a Slack workspace with permission to install apps.
+- The integration feature must be enabled on your plan.
+```
+
+## Steps
+
+One action per step. Describe the visible result immediately after any step that produces one.
+
+```text
+1. Select **Settings** in the left sidebar.
+
+2. Select **Integrations**, then select **Add integration**.
+
+   The integrations panel opens.
+
+3. Select **Slack** from the list of available integrations.
+
+4. Enter your Slack workspace URL in the **Workspace URL** field.
+
+5. Select **Connect**.
+
+   A confirmation message appears and the Slack integration status changes to **Active**.
+```
+
+## Assumptions
+
+A how-to guide assumes the reader:
+- Has already completed the getting started guide
+- Has basic familiarity with the product
+- Knows what they're trying to accomplish and needs the steps, not the context
+
+If the reader needs background before they can follow the steps, link to the relevant concept page or tutorial. Don't put explanation inside a how-to guide.

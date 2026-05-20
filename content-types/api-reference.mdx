@@ -1,0 +1,79 @@
+---
+title: "API reference"
+description: "How to structure and write API reference documentation."
+---
+
+API reference is information-oriented. It describes the machinery. Every endpoint must be documented consistently so developers can look up exactly what they need.
+
+## Required sections per endpoint
+
+Every endpoint must include all seven elements.
+
+| Section | What to include |
+|---|---|
+| **Description** | What the endpoint does and when to use it. One to two sentences. |
+| **HTTP method** | GET, POST, PUT, PATCH, or DELETE |
+| **URL** | Full URL with path parameters in curly braces |
+| **Parameters** | Name, type, required or optional, description |
+| **Example request** | Working curl command with ALL CAPS placeholders |
+| **Example response** | Real data from a verified API run |
+| **Error codes** | Status code, cause, and fix |
+
+## Endpoint example
+
+The following example shows a complete, correctly structured endpoint.
+
+### Create a user
+
+Creates a new user in the system. Returns the created user object.
+
+**POST** `/v1/users`
+
+**Parameters**
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `email` | string | Yes | The user's email address |
+| `name` | string | Yes | The user's display name |
+| `role` | string | No | The user's role. Defaults to `viewer`. |
+
+**Example request**
+
+```bash
+curl -X POST https://api.example.com/v1/users \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "USER_EMAIL",
+    "name": "USER_NAME",
+    "role": "editor"
+  }'
+```
+
+**Example response**
+
+```json
+{
+  "id": "usr_01HXYZ",
+  "email": "user@example.com",
+  "name": "Jane Smith",
+  "role": "editor",
+  "created_at": "2024-03-15T10:30:00Z"
+}
+```
+
+**Error codes**
+
+| Code | Cause | Fix |
+|---|---|---|
+| `400` | Missing required field | Check that `email` and `name` are included in the request body |
+| `401` | Invalid API key | Verify your API key in **Settings > API keys** |
+| `409` | Email already exists | Use a different email address |
+
+## Writing rules for API reference
+
+- Good API docs define every field in the response. Bad API docs assume the user already knows what the fields mean.
+- Test every example against the live API before publishing. Never include examples you haven't run.
+- Use noun phrases for endpoint group headings: "Users," "Authentication," "Webhooks"
+- Use the same structure for every endpoint. Consistency is the most important quality in reference documentation.
+- Don't add explanation or tutorial content inside reference pages. If the user needs context, link to the relevant concept page.

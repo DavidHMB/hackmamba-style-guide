@@ -1,0 +1,68 @@
+---
+title: "Diataxis framework"
+description: "The four documentation content types and when to use each one."
+---
+
+Every page has one clear purpose. Never mix content types on the same page. The Diataxis framework gives you four distinct types.
+
+## The four types
+
+<CardGroup cols={2}>
+  <Card title="Tutorial" icon="graduation-cap">
+    Learning-oriented. The user builds understanding by doing. The writer controls the sequence. For someone new to the product.
+  </Card>
+  <Card title="How-to guide" icon="list-check">
+    Goal-oriented. The user has a specific task. Steps to complete it. Assumes existing knowledge.
+  </Card>
+  <Card title="Reference" icon="book">
+    Information-oriented. API, CLI, and configuration details. Lookup content. Describes machinery, no instructions.
+  </Card>
+  <Card title="Explanation" icon="lightbulb">
+    Understanding-oriented. Explains how something works and why. No steps. Provides context and background.
+  </Card>
+</CardGroup>
+
+## Choosing the right type
+
+| The user needs to... | Use... |
+|---|---|
+| Learn how to use the product for the first time | Tutorial |
+| Complete a specific task they've done before | How-to guide |
+| Look up a parameter, method, or option | Reference |
+| Understand how something works or why it's designed this way | Explanation |
+
+## The key distinctions
+
+**Tutorials vs how-to guides:** both involve practical steps, but they serve different purposes. Tutorials are for learning. How-to guides are for doing. A tutorial assumes no prior knowledge. A how-to guide assumes the reader already knows the basics.
+
+**Reference vs explanation:** reference describes the machinery without interpretation. Explanation provides context and background without instructions. Don't mix them on the same page.
+
+## Divio system rules
+
+These rules come from the Divio documentation system and help you keep content types clean.
+
+- The four types overlap naturally and will be pulled toward each other. Resist this. Keep them separate.
+- Reference must describe, and only describe. Explanation, discussion, or instruction in reference is a distraction.
+- Give reference documentation the same structure as the codebase it describes.
+- Tutorials must be reliably repeatable. Everything the learner does should accomplish something comprehensible.
+- How-to guides can start and end where appropriate. Practical usability is more valuable than completeness.
+- Explanation is the most neglected type. It covers background, context, and the why behind decisions.
+- A how-to guide assumes the reader already knows the basics. If they don't, send them to the tutorial first.
+
+## The Pixar formula for introductions
+
+Every tutorial and how-to guide introduction follows this three-part structure.
+
+<Steps>
+  <Step title="Situation">
+    Open with the reader's goal or context.
+  </Step>
+  <Step title="Obstacle">
+    Name what stops them from achieving it with a single request or action.
+  </Step>
+  <Step title="Promise">
+    State exactly what the page will help them accomplish.
+  </Step>
+</Steps>
+
+Be specific. Name the tool, the API, or the exact task. Never use vague language like "a large dataset" when you can say "827 open issues from the repository."

@@ -1,0 +1,55 @@
+---
+title: "Docs as code"
+description: "How to treat documentation the same way developers treat code."
+---
+
+Docs as code means documentation lives in the same repository as code, uses the same version control, and follows the same review process.
+
+## Core practices
+
+- Write documentation in Markdown or MDX in an IDE
+- Store documentation in a Git repository alongside the code it describes
+- Use pull requests to review and approve documentation changes before they go live
+- Run automated checks on documentation (broken links, Vale linting, spell checking)
+- Publish documentation automatically when changes are merged
+
+## Why it works
+
+**Docs stay in sync with code.** When documentation lives next to code in the same repository, it's harder for code to ship without documentation. Nobody merges a change without the accompanying docs because the pull request is incomplete without them.
+
+**Increased collaboration.** In a docs-as-code workflow, developers typically write a first draft. Technical writers verify and complete it. Writers spend less time asking basic questions and more time improving accuracy and clarity.
+
+**Built-in version control.** Every change to documentation is tracked. If something breaks, you can roll back. The full history is always available.
+
+**Automated quality checks.** Run Vale, cSpell, and link validators on documentation the same way developers run tests on code. These catch errors before they reach readers.
+
+## Typical workflow
+
+<Steps>
+  <Step title="Developer writes the first draft">
+    The developer who built the feature writes the initial documentation in Markdown inside the code repository.
+  </Step>
+  <Step title="Technical writer picks it up">
+    The writer verifies the draft against the live product, fills gaps, and rewrites for clarity and style compliance.
+  </Step>
+  <Step title="Pull request review">
+    The pull request goes through peer review. Team members leave feedback on both code and docs together.
+  </Step>
+  <Step title="Automated checks run">
+    Vale linting, cSpell spell checking, and link validation run automatically on every pull request.
+  </Step>
+  <Step title="Merge and deploy">
+    Once approved, the documentation publishes automatically.
+  </Step>
+</Steps>
+
+## Tools
+
+| Purpose | Tool |
+|---|---|
+| Version control | Git + GitHub |
+| Writing | VS Code, any Markdown editor |
+| Style linting | Vale |
+| Spell checking | cSpell |
+| Publishing | Mintlify, Docusaurus, GitHub Pages |
+| CI/CD | GitHub Actions |

@@ -1,0 +1,61 @@
+---
+title: "API documentation best practices"
+description: "What every API documentation set needs and how to make it excellent."
+---
+
+API documentation is different from other documentation types. The docs are often the product's user interface. Developers learn about the product through the docs. Poor API docs directly reduce adoption, even for a technically excellent API.
+
+## What every API documentation set needs
+
+Every API documentation set must include both reference content and conceptual content.
+
+**Reference content:**
+- Every endpoint documented consistently (see the [API reference](/content-types/api-reference) page for the required structure)
+- Complete error code reference
+- Authentication guide
+- Rate limits
+
+**Conceptual content:**
+- Getting started guide (zero to first working request as fast as possible)
+- Authentication: how to get a key, where to put it, what it costs
+- Status and error codes: every possible code with cause and resolution
+- Rate limits: how many requests per period, what happens when exceeded
+- Tutorials: end-to-end walkthroughs using the endpoints together
+- SDKs: language-specific implementations
+
+## The hello world principle
+
+The shorter the time from "I found these docs" to "I have something working," the higher the adoption rate. A getting started guide that says "get up and running in five minutes" drives more signups than a comprehensive overview.
+
+Get users to a first successful result immediately, then let them explore deeper.
+
+## The try it out feature
+
+Interactive API explorers that let users execute requests directly inside the docs are the defining characteristic of great API documentation. When developers can push a button and see a real response, adoption increases. Platforms like Stoplight and ReadMe generate this interactivity from an OpenAPI Specification file.
+
+## The OpenAPI Specification
+
+The OAS is the structured format that powers most modern API documentation tools. When you describe your API in this format, tools can:
+- Render interactive documentation
+- Generate code snippets in multiple languages
+- Validate requests automatically
+
+Swagger is tooling built on top of OAS, not the specification itself.
+
+## Organizing API docs
+
+- Know your audience: decision-makers need high-level overviews, developers need technical depth
+- Provide a quick start for developers who want to get running immediately
+- Structure navigation around user intent: "I want to authenticate," "I want to paginate." Don't organize around internal system structure.
+- Maintain a living gotchas section built from support tickets and GitHub issues
+
+## Testing before publishing
+
+Test every request in Postman or curl before including it in the docs. Never publish API examples you haven't run against the live API.
+
+Every code example must be:
+- Complete
+- Copy-pasteable
+- Verified to run without modification
+
+Show both the request and the expected response together so readers know what to expect.

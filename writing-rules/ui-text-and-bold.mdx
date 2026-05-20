@@ -1,0 +1,102 @@
+---
+title: "UI text and bold"
+description: "Rules for formatting UI elements, error messages, and when to use bold."
+---
+
+## Bold for UI elements
+
+Bold all UI labels, buttons, field names, and selectable elements. Don't use quotation marks around them.
+
+<CodeGroup>
+```text Right
+Select **Save** to apply your changes.
+Enter your email address in the **Email** field.
+```
+
+```text Wrong
+Select "Save" to apply your changes.
+Enter your email address in the Email field.
+```
+</CodeGroup>
+
+## Don't overuse bold
+
+Reserve bold for UI elements and critical terms only. Bold used for general emphasis loses its meaning and makes pages harder to scan.
+
+<CodeGroup>
+```text Wrong — bold overused
+**Important:** Make sure you **save** your work before you **close** the window. This is a **critical** step.
+```
+
+```text Right — bold only for UI elements
+Save your work before you close the window. This step is required.
+```
+</CodeGroup>
+
+## Colons outside bold formatting
+
+Place colons outside bold formatting, not inside.
+
+<CodeGroup>
+```text Right
+**Add widgets**:
+**Scenario 1**: description
+```
+
+```text Wrong
+**Add widgets:**
+**Scenario 1:** description
+```
+</CodeGroup>
+
+## Match UI capitalisation exactly
+
+Match UI labels, buttons, and error messages exactly as they appear in the live product, including capitalisation. If the product uses title case for a button, your documentation uses title case for that button.
+
+## Select, not click
+
+Use "select" for all UI interactions, not "click." "Click" assumes a mouse. "Select" works across mouse, touch, and keyboard.
+
+| Right | Wrong |
+|---|---|
+| Select **Save** | Click **Save** |
+| Select the **Submit** button | Click the **Submit** button |
+
+## Disambiguation for repeated labels
+
+When the UI label would create awkward repetition in the sentence, add the control type.
+
+<CodeGroup>
+```text Awkward — label repeats the verb
+Select **Select**.
+```
+
+```text Right — control type added
+Select the **Select** button.
+```
+</CodeGroup>
+
+<Note>
+This is a local style decision for clarity, not a Google style guide requirement. Google's guidance is to prioritize clarity and avoid awkward duplication, which usually means rewriting the sentence to be unambiguous.
+</Note>
+
+## Error messages
+
+Quote the error message exactly as it appears in the product. Then explain what it means and what the developer should do next.
+
+```text
+If you see `Error: Invalid API key`, your API key is either incorrect or expired.
+Generate a new key in your dashboard under **Settings > API keys**.
+```
+
+## Italics
+
+Use italics sparingly. Prefer clear wording over typographic stress.
+
+**Permitted uses:**
+- Introducing a term you define in the same sentence. Italicize it on the first mention only.
+- Strong emphasis when importance would be lost without it. Use this at most once or twice per page.
+
+**Do not** use italics for UI labels (use bold), for general emphasis, or to repeat a term after you've already defined it.
+
+In Markdown, use underscores for italics (`_like this_`) so they're easy to tell apart from bold (`**like this**`).

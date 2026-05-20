@@ -1,0 +1,44 @@
+---
+title: "Quality rubric and AI guardrails"
+description: "The scoring tool used for self-review, peer review, and gate reviews. Plus the six guardrails for AI-assisted documentation."
+---
+
+## Quality rubric
+
+The quality rubric is the single scoring tool used for self-review, peer review, and Lead Coordinator gate reviews. Everyone uses the same standard.
+
+| Criterion | 1: Needs work | 3: Developing | 5: Production-ready | Weight |
+|---|---|---|---|---|
+| Technical accuracy | Factual errors or untested code | Mostly accurate, minor gaps | Fully verified, all code tested | 25% |
+| Clarity | Dense, jargon-heavy, passive voice | Generally clear, occasional issues | Plain language, scannable, concise | 20% |
+| Structure | Disorganized or tool-focused | Logical, could improve flow | Task-focused, intuitive hierarchy | 20% |
+| Usability | Cannot follow the steps | Followable with some guesswork | User completes task unaided | 15% |
+| Style compliance | Ignores style guide | Follows most conventions | Fully compliant | 10% |
+| Completeness | Missing critical sections | Main content, minor gaps | All sections present, thorough | 10% |
+
+**Weighted score calculation:** multiply each score (1–5) by its weight percentage. Maximum is 5.00.
+
+## Six AI guardrails
+
+Apply these guardrails to every piece of content that involved AI assistance.
+
+<Steps>
+  <Step title="Verify every claim">
+    No AI-generated technical statement goes to production without manual verification against the product, API, or codebase.
+  </Step>
+  <Step title="Test every code sample">
+    Every code example must execute in the actual environment before publishing. Expected output must match what the reader will actually see.
+  </Step>
+  <Step title="Own the voice">
+    AI drafts are raw material. Rewrite for voice, tone, and style compliance. Never publish AI output as-is.
+  </Step>
+  <Step title="Disclose when uncertain">
+    If AI provides something you can't verify, flag it for technical review. Don't publish unverified claims.
+  </Step>
+  <Step title="No AI for final review">
+    AI can do pre-review checks. Final quality review is always human.
+  </Step>
+  <Step title="Track AI-assisted sections">
+    Note which sections were AI-assisted so reviewers can evaluate your editorial judgment.
+  </Step>
+</Steps>

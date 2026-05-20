@@ -1,0 +1,90 @@
+---
+title: "Sentence and paragraph rules"
+description: "Rules for sentence length, structure, paragraph length, and punctuation."
+---
+
+## Sentence length
+
+Maximum 25 words per sentence. Shorter is better. One main idea per sentence. Don't combine two actions or two concepts in one sentence.
+
+Vary sentence length. Mix short sentences (around 8 words) with longer ones (up to 25 words). Uniform sentence length reads as robotic.
+
+## Paragraph length
+
+Keep paragraphs to two to three sentences for online documentation. Longer paragraphs create unnecessary cognitive load for readers who are scanning.
+
+## If/then construction
+
+Every "if" clause must include "then" in the predicate. No exceptions. This helps readers with lower English proficiency parse conditions correctly.
+
+<CodeGroup>
+```text Wrong
+If you need updates, use Option A.
+```
+
+```text Right
+If you need updates, then use Option A.
+```
+</CodeGroup>
+
+## Capitalize after a colon
+
+Capitalize when a full sentence follows a colon or hyphen. Use lowercase when what follows is a phrase or fragment.
+
+<CodeGroup>
+```text Full sentence after colon — capitalize
+Note: This action is irreversible.
+```
+
+```text Fragment after colon — lowercase
+Options: daily, weekly, or monthly.
+```
+</CodeGroup>
+
+## Avoid "where" to connect clauses
+
+Use "because," "since," or "so" instead.
+
+<CodeGroup>
+```text Wrong
+Teams maintain duplicate codebases where maintenance costs double.
+```
+
+```text Right
+Teams maintain duplicate codebases, so maintenance costs double.
+```
+</CodeGroup>
+
+## Sentence starters
+
+Occasionally start sentences with "And" or "But" when it creates natural flow. Avoid nested clauses. When a simpler structure works, use it.
+
+## No mechanical transitions
+
+Never use: Additionally, Furthermore, Moreover, In conclusion, To summarise, In summary, As mentioned above, As previously stated.
+
+## Abbreviations
+
+Never use "e.g." Write "for example" in full. Never use "i.e." Write "that is" in full.
+
+## Numbers and dates
+
+Spell out numbers one through nine. Use numerals for 10 and above. Use ISO 8601 format for timestamps: `YYYY-MM-DDTHH:MM:SSZ`.
+
+## Em-dashes
+
+Never use em-dashes anywhere. Not in prose, not in headings, not in code comments. Use a period, a comma, or split the sentence instead.
+
+<CodeGroup>
+```text Wrong
+You use the standard SDK — no separate package is needed.
+```
+
+```text Right
+You use the standard SDK. You don't need a separate package.
+```
+</CodeGroup>
+
+<Tip>
+Verify with `grep -n "—"` before every submission to catch any em-dashes.
+</Tip>

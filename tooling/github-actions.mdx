@@ -1,0 +1,118 @@
+---
+title: "GitHub Actions"
+description: "How to use GitHub Actions to automate documentation quality checks and deployments."
+---
+
+GitHub Actions automates developer workflows. For documentation teams, the most valuable use is running quality checks on every pull request automatically.
+
+## Core concepts
+
+| Concept | What it is |
+|---|---|
+| **Event** | Something that happens in your repository: a push, a pull request, an issue being created |
+| **Action** | A small automated task triggered by an event |
+| **Workflow** | A combination of actions that execute together in response to an event |
+| **Job** | A group of steps that run in sequence on a single server |
+| **Runner** | The server that executes the workflow. GitHub provides Ubuntu, Windows, and macOS. |
+
+## Workflow file structure
+
+All workflow files live in `.github/workflows/` and use YAML format.
+
+```yaml
+name: Docs quality check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Vale
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          files: docs/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+## Key syntax
+
+| Element | Purpose |
+|---|---|
+| `on:` | Defines the events that trigger the workflow |
+| `jobs:` | Groups the steps for each automated task |
+| `uses:` | References a pre-built action from the GitHub Actions marketplace |
+| `run:` | Executes a shell command directly |
+| `needs:` | Makes one job wait for another to complete first |
+| `${{ secrets.SECRET_NAME }}` | References a secret stored in repository settings |
+
+## Pre-built actions
+
+The GitHub Actions marketplace contains pre-built actions for common tasks. Use them instead of writing shell commands from scratch.
+
+| Action | Purpose |
+|---|---|
+| `actions/checkout@v4` | Checks out your repository code |
+| `actions/setup-node@v4` | Installs a specific Node.js version |
+| `errata-ai/vale-action` | Runs Vale style linting |
+| `streetsidesoftware/cspell-action` | Runs cSpell spell checking |
+
+## Secrets management
+
+Never put credentials in your workflow file. Store them in **Settings > Secrets and variables > Actions** and reference them as `${{ secrets.SECRET_NAME }}`.
+
+## Documentation-specific use cases
+
+```yaml
+# Run Vale + cSpell on every pull request
+name: Documentation quality
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Vale style check
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          files: docs/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: cSpell spell check
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          files: "docs/**/*.md"
+```
+
+## Run jobs in sequence
+
+By default, jobs run in parallel. Use `needs:` to make one job wait for another.
+
+```yaml
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Vale check
+        uses: errata-ai/vale-action@reviewdog
+
+  deploy:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy docs
+        run: npm run deploy
+```

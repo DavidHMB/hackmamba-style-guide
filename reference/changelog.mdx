@@ -1,0 +1,79 @@
+---
+title: "Changelog"
+description: "A record of every addition, change, and fix to this style guide."
+---
+
+This changelog follows the [Keep a Changelog](https://keepachangelog.com) format. Dates use ISO 8601: YYYY-MM-DD.
+
+---
+
+## 2026-05-20 — Initial release
+
+### Added
+
+**Site**
+- Published the Hackmamba Documentation Style Guide as a Mintlify site with Hackmamba brand colors (`#17023F` primary, `#F6F6F6` background)
+- Single Docs tab with eight sidebar groups ordered to match the technical writer user journey
+- Changelog tab
+
+**Getting started**
+- Introduction page for technical writers covering two user modes: new writers learning the guide and experienced writers using it as a reference
+- Six documentation standards page with the test for each standard and a tool-focused vs user-focused comparison table
+- Quality rubric and AI guardrails page with the full six-criterion weighted scoring table and six enforced guardrails
+
+**Writing rules**
+- Voice, tense, and person: active voice, second person, present tense, may vs might, contractions, hidden verbs, plural antecedents
+- Sentence and paragraph rules: 25-word limit, paragraph length for online writing, if/then construction, capitalize after colon, avoid "where" to connect clauses, em-dash rule with grep verification tip, abbreviations, numbers and dates
+- Headings: sentence case, hierarchy, naming conventions by content type, sidebar naming, one grammatical pattern per level, minimise parentheses
+- Lists and steps: bullet vs numbered lists, period consistency, mixed-structure items, system responses are not steps with example
+- Code: language after every fence, no dollar signs, ALL CAPS placeholders, comment out expected output, text before every code block, complete and copy-pasteable examples
+- UI text and bold: bold for UI elements, no overusing bold, colons outside bold, select not click, disambiguation for repeated labels, error messages, italics usage and Markdown formatting convention
+- Links and signposting: inline linking, descriptive link text, when "see" is acceptable, cross-links, transitions between sections, reference lists need intro sentences
+- Notes, warnings, and tables: when to use each callout type, table formatting rules with parameter table example
+- Banned words and phrases: 11 banned words, 8 banned phrases, 7 mechanical transitions, 5 sparingly-used words
+
+**Content types**
+- Diataxis framework: the four types, how to choose, key distinctions, Divio system rules, Pixar formula for introductions
+- Tutorials: required page structure with six-step flow, introduction example with Pixar formula, writing steps correctly with wrong/right examples, troubleshooting section with three error examples, cross-link to seven action model
+- How-to guides: required page structure, introduction guidance, prerequisites format, step formatting, assumptions
+- API reference: seven required sections per endpoint, complete endpoint example with parameters table, request, response, and error codes, writing rules for API reference
+- Troubleshooting: structure by symptom, three-part entry format, Accordion example, how to find what to document, teach users to troubleshoot, document limitations inline
+
+**Principles**
+- User-focused writing: tool-focused vs user-focused table, organize by user intent, the gotchas section, what developers actually need, every page is a front door, cross-link to headings rules
+- Cognitive load: three types table, ten techniques with examples, caveman technique with three-step process, cross-link to sentence rules
+- Developer mindset: developers scan not read, friction is the enemy, match workflow sequence, put docs where developers are, write for the moment of need, support automation
+- Information architecture: four components, IA rules, information fragmentation definition, sidebar naming, tutorial and guide labels, UI product and tool labels, cross-link to headings rules
+- Journey mapping: five components table, journey phase examples, standard map format, applying journey mapping to documentation
+- Storytelling and flair: Pixar framework, modular content, voice and tone by section table, four voice principles with examples
+
+**API documentation**
+- REST concepts: what REST is, five HTTP methods table, key concepts (resource, endpoint, parameters, authentication, status codes), URL naming rules
+- Best practices: what every API documentation set needs, the hello world principle, the try it out feature, the OpenAPI Specification, organizing API docs, testing before publishing
+- Code examples: treat code like writing, complete examples, show inputs and outputs together, multi-language support with CodeGroup example, keeping examples up to date, inline code in prose
+
+**Tooling**
+- Vale and cSpell: Vale alert levels, core `.vale.ini` configuration, install and run commands, GitHub Actions integration for Vale, cSpell GitHub Actions integration, `cspell.json` whitelist configuration, full quality workflow table (Vale + cSpell + LanguageTool)
+- GitHub Actions: core concepts table, workflow file structure with working YAML, key syntax table, pre-built actions table, secrets management, documentation-specific use cases, running jobs in sequence with `needs`
+- Mintlify: `docs.json` configuration with brand color example, file format rules, component usage rules table, migration checklist, Git Sync workflow
+- Versioning and Docusaurus: Read the Docs versioning rules, versioning strategy, redirects when moving pages, Docusaurus setup and key files, docs-only mode, platform comparison table
+
+**Collaboration**
+- SME collaboration: eight principles as a Steps component, source credibility by role table, interview technique, post-interview process
+- Docs as code: core practices, why it works, five-step workflow as Steps component, tools table
+- Technical reviews: rules for reviewers, what to avoid, assigning a doc caretaker, what the reviewer checks, how writers should prepare for review
+
+**Reference**
+- Editing checklist: six sections (Before you start, User-focused, Trustworthy, Easy to understand, Easy to find, Usability, Style compliance, File and folder structure) with checkbox format for every item
+- Seven action model: all seven actions as AccordionGroup with descriptions and metrics, doc sandwich, action-to-content-type mapping table
+- Taxonomies: why taxonomies matter, advantages over indexes, five facets for technical documentation, diverse users, tagging in practice with frontmatter example
+- Font and formatting: Google Docs specs, Markdown formatting conventions table, why underscores for italics, heading case, spacing rules
+
+### Fixed
+- Sidebar reordered from feature-based to user-journey order (Principles moved to position 2, before Writing rules)
+- Introduction updated to explicitly name technical writers as the audience and guide two distinct user modes
+- Eight-tab structure collapsed to single Docs tab with sidebar groups, following the guide's own IA rules
+
+---
+
+*To propose a change to this guide, open a pull request in the GitHub repository and assign a reviewer.*

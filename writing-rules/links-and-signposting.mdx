@@ -1,0 +1,71 @@
+---
+title: "Links and signposting"
+description: "Rules for inline linking, link text, cross-references, and transitions between sections."
+---
+
+## Inline linking
+
+Inline linking is the default for web-based documentation. Embed links naturally as part of the sentence so the reader stays in context and understands why the link is relevant before selecting it.
+
+<CodeGroup>
+```text Right — inline link with context
+Each widget type has its own configuration options, covered in the [Widgets](/reference/widgets) section.
+```
+
+```text Wrong — vague signpost
+For configuration details, see the [Widgets](/reference/widgets) section.
+```
+</CodeGroup>
+
+## Descriptive link text
+
+Never use "click here," "here," or raw URLs as link text. Write link text that describes the destination.
+
+| Right | Wrong |
+|---|---|
+| Read the [API authentication guide](/api-docs/best-practices) | Click [here](/api-docs/best-practices) for more info |
+| Browse the [Mintlify component library](https://mintlify.com) | See [this page](https://mintlify.com) |
+
+## When "see" is acceptable
+
+Use "see" as a signpost only when:
+- The reference is the subject of the sentence
+- You're flagging a major topic shift
+- The linked content is a warning or prerequisite
+
+Don't use "see" as a casual default signpost.
+
+## Cross-links
+
+Cross-links appear at the point where the developer needs them, not only at the end of the page. If a user completing Step 3 might need to reference the configuration page, link to it at Step 3.
+
+## Transitions between sections
+
+Apply transitions based on content type.
+
+**Conceptual content:** use a short transition (one to two sentences) before each new heading to close the current section and set up the next.
+
+**Task-based and reference content:** no transitions between sections. Each section opens with a direct statement and stands on its own.
+
+The test: if removing the sentence between two sections leaves both sections fully clear, the sentence doesn't belong.
+
+## Reference lists
+
+Any reference list or further reading section at the end of a page needs an introductory sentence. Don't drop a bare list of links with no context.
+
+<CodeGroup>
+```text Wrong
+## Further reading
+- [Google Style Guide](https://developers.google.com/style)
+- [Microsoft Writing Style Guide](https://docs.microsoft.com/style-guide)
+```
+
+```text Right
+## Further reading
+
+These resources expand on the principles covered in this guide.
+
+- [Google Developer Documentation Style Guide](https://developers.google.com/style)
+- [Microsoft Writing Style Guide](https://docs.microsoft.com/style-guide)
+```
+</CodeGroup>
