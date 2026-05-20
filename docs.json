@@ -6,6 +6,7 @@
     "dark": "/logo/hackmamba-dark.svg"
   },
   "favicon": "/logo/favicon.png",
+  "theme": "luma",
   "colors": {
     "primary": "#17023F",
     "light": "#6B21A8",
