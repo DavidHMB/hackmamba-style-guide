@@ -59,6 +59,16 @@ Teams maintain duplicate codebases, so maintenance costs double.
 
 Occasionally start sentences with "And" or "But" when it creates natural flow. Avoid nested clauses. When a simpler structure works, use it.
 
+<CodeGroup>
+```text Nested — harder to read
+The API, which requires authentication, which you set up in the previous step, returns a JSON response.
+```
+
+```text Simpler
+The API requires authentication. Set it up in the previous step. It returns a JSON response.
+```
+</CodeGroup>
+
 ## No mechanical transitions
 
 Never use: Additionally, Furthermore, Moreover, In conclusion, To summarise, In summary, As mentioned above, As previously stated.
@@ -73,18 +83,37 @@ Spell out numbers one through nine. Use numerals for 10 and above. Use ISO 8601 
 
 ## Em-dashes
 
-Never use em-dashes anywhere. Not in prose, not in headings, not in code comments. Use a period, a comma, or split the sentence instead.
+Use em-dashes when they improve clarity, emphasis, or flow. Use them for a sharp break in thought, immediate clarification, or a parenthetical remark that would be clunkier with commas or periods. Don't use them automatically or because they appear frequently in AI-generated text.
+
+**When to use an em-dash:**
+- You want to add a quick clarification mid-sentence.
+- You want a deliberate pause or break in thought.
+- You want stronger emphasis than a comma or parentheses provides.
+
+**When to skip the em-dash:**
+- A period is cleaner.
+- A comma is enough.
+- A colon gives a clearer lead-in.
+- The sentence reads more naturally without it.
 
 <CodeGroup>
-```text Wrong
-You use the standard SDK — no separate package is needed.
+```text Better with em-dash
+The issue is clear—missing permissions caused the failure.
 ```
 
-```text Right
-You use the standard SDK. You don't need a separate package.
+```text Better with a period
+The issue is clear. Missing permissions caused the failure.
+```
+
+```text Better with a colon
+The issue is clear: missing permissions caused the failure.
 ```
 </CodeGroup>
 
-<Tip>
-Verify with `grep -n "—"` before every submission to catch any em-dashes.
-</Tip>
+All three are correct. Choose the one that reads best in context.
+
+**The rule in plain terms:**
+- Use em-dashes only when they improve clarity or emphasis.
+- Don't use them automatically or because they are a common AI-writing pattern.
+- Prefer periods, commas, or colons when they read more cleanly.
+- Choose the punctuation that makes the sentence easiest to scan and understand.

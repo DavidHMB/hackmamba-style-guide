@@ -1,0 +1,53 @@
+---
+title: "Client engagement process"
+description: "The four-stage process for taking a documentation engagement from audit to a published style guide."
+---
+
+Every client documentation engagement follows this sequence. The order is deliberate. You can't build structure before you understand the product, and you can't write consistently before you have rules.
+
+<Steps>
+  <Step title="Audit">
+    Assess the current state of the documentation. Identify what exists, what's missing, and what's broken. Classify every finding by its impact on the user.
+
+    Deliver a structured findings report before moving to the next stage.
+  </Step>
+  <Step title="User journey">
+    Map how users actually move through the product. Identify which documentation supports each stage and where the gaps are. The user journey determines what you build next.
+
+    Structure everything that follows around the user's flow, not the product's menu.
+  </Step>
+  <Step title="Information architecture">
+    Design the structure of the documentation based on the user journey. Decide what pages exist, what they cover, how they connect, and how users navigate between them.
+
+    The IA is the blueprint. Writing before it exists produces content that doesn't fit together.
+  </Step>
+  <Step title="Writing style guide">
+    Define the rules for how the documentation is written: voice, tone, formatting, terminology, and product-specific decisions. The style guide makes every writer on the project consistent.
+
+    Write the style guide after you understand the product and audience, not before.
+  </Step>
+</Steps>
+
+## Why this order matters
+
+Skipping stages or reversing them creates compounding problems.
+
+If you write before auditing, you duplicate what already exists and miss what's missing. If you build IA before mapping the user journey, you structure content around the product's features rather than the user's goals. If you write without a style guide, every writer makes different decisions and the documentation reads as if multiple products exist.
+
+The sequence exists because each stage depends on the output of the stage before it.
+
+## Audit classification framework
+
+The audit report organizes findings by their impact on the user, not by content type or location in the docs.
+
+| Level | Definition | Examples |
+|---|---|---|
+| **Critical blockers** | Prevent task completion entirely | Missing prerequisite steps, broken getting started guide, no authentication documentation |
+| **Major friction points** | Significantly slow progress | Inconsistent terminology, installation buried in how-to guides, no troubleshooting section |
+| **Minor issues** | Create inconsistency or confusion but don't block users | Heading capitalisation inconsistencies, passive voice throughout, outdated screenshots |
+
+Classify every finding before prioritizing fixes. Critical blockers ship first. Minor issues ship last or are batched into a cleanup sprint.
+
+<Note>
+When presenting audit findings to a client or lead, lead with critical blockers. Reviewers need to understand what prevents users from completing tasks before they can evaluate the full list of improvements.
+</Note>

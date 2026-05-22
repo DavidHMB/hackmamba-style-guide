@@ -6,7 +6,7 @@
     "dark": "/logo/hackmamba-dark.svg"
   },
   "favicon": "/logo/favicon.png",
-  "theme": "luma",
+  "theme": "mint",
   "colors": {
     "primary": "#17023F",
     "light": "#6B21A8",
@@ -80,6 +80,7 @@
           {
             "group": "Collaboration",
             "pages": [
+              "collaboration/client-engagement",
               "collaboration/sme-collaboration",
               "collaboration/docs-as-code",
               "collaboration/technical-reviews"

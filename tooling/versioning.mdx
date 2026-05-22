@@ -7,7 +7,7 @@ description: "How to manage versioned documentation and build sites with Docusau
 
 Every documentation project that has multiple releases needs a versioning strategy.
 
-**Core versioning rules:**
+### Core versioning rules
 
 - Publish a separate `latest` version pointing to the most up-to-date development code
 - Publish a separate `stable` version pointing to the most recent release tag
@@ -15,7 +15,7 @@ Every documentation project that has multiple releases needs a versioning strate
 - Keep development versions hidden so they don't appear in search results
 - Use semantic versioning for tags: `1.4.2`, not descriptive names
 
-**Versioning strategy:**
+### Versioning strategy
 
 Maintain separate Git branches for each release version. When ready to release, create a new branch named after the version (for example, `v4.0`). Apply hotfixes to the release branch, not only to main.
 
@@ -34,7 +34,7 @@ Use minimal filenames that don't require renaming often. Renaming an article's t
 
 Docusaurus is a static-site generator built by Meta. It builds a single-page application using React, optimized for documentation sites.
 
-**When to use Docusaurus:**
+### When to use Docusaurus
 - You need versioning support
 - Your team writes in Markdown and knows React
 - You're deploying to GitHub Pages or Vercel
