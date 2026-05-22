@@ -8,9 +8,26 @@
   "favicon": "/logo/favicon.png",
   "theme": "mint",
   "colors": {
-    "primary": "#17023F",
-    "light": "#6B21A8",
-    "dark": "#17023F"
+    "primary": "#6B21A8",
+    "light": "#A855F7",
+    "dark": "#5B21B6"
+  },
+  "background": {
+    "style": "gradient",
+    "color": {
+      "dark": "#0A0517",
+      "light": "#F9F6FF"
+    }
+  },
+  "font": {
+    "headings": {
+      "family": "Plus Jakarta Sans",
+      "weight": 700
+    },
+    "body": {
+      "family": "Plus Jakarta Sans",
+      "weight": 400
+    }
   },
   "navigation": {
     "tabs": [
@@ -93,6 +110,17 @@
               "reference/seven-action-model",
               "reference/taxonomies",
               "reference/font-formatting"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Style guide",
+        "groups": [
+          {
+            "group": "Style guide",
+            "pages": [
+              "style-guide/writing-rules"
             ]
           }
         ]

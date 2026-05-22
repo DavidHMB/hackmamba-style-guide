@@ -1,0 +1,314 @@
+---
+title: "Documentation style guide"
+description: "All writing rules in one document. Copy and paste into any LLM, editor, or platform tool."
+icon: "copy"
+---
+
+It combines every rule, principle, and standard from the Hackmamba Technical Writer Course, Professional Experience with teams, and client engagements. Copy the full text and paste it as context into any LLM, writing tool, or documentation platform to enforce consistent style.
+
+<Note>
+This page covers writing rules only. For content types, tooling, API documentation, and collaboration principles, use the main Docs tab.
+</Note>
+
+---
+
+## The six documentation standards
+
+Every piece of documentation must meet all six before it's ready to publish.
+
+- **User-focused:** Write for what the user wants to do, not what the tool is. Every heading describes a user task or outcome, not a product feature.
+- **Trustworthy:** Verify every claim against the live product before publishing. Perform every step you document.
+- **Easy to understand:** Plain language, active voice, short sentences. If a sentence is hard to write, it's hard to read.
+- **Easy to find:** Structure content around how users think and move through tasks, not around how the product is built.
+- **Usable:** A user can complete the task unaided, with no guesswork.
+- **Style compliant:** Active voice, second person, present tense, no sentence over 25 words.
+
+---
+
+## Voice and person
+
+**Active voice.** The subject performs the action.
+- Wrong: "The token is stored in the .env file."
+- Right: "Store the token in the .env file."
+
+**Second person.** Use "you" and "your" throughout. Never use "we," "let's," or "our" unless quoting a UI element.
+- Wrong: "We recommend enabling two-factor authentication."
+- Right: "Enable two-factor authentication before continuing."
+
+**Present tense.** No future tense.
+- Wrong: "The script will return a JSON response."
+- Right: "The script returns a JSON response."
+
+**Contractions.** Use them naturally. Write "you'll need to," "it's important," "don't forget." Avoid formal constructions like "do not" and "it is" unless surrounding sentences already use a contraction.
+
+**May and might.**
+- Use "may" for permission: "You may skip this step if you already have a token."
+- Use "might" for possibility: "This might cause a build failure."
+
+**Hidden verbs.** Convert verb-noun constructions back to plain verbs.
+- "conduct an analysis of" → "analyze"
+- "provide a summary of" → "summarize"
+- "make a decision" → "decide"
+- "perform a review of" → "review"
+
+**Plural antecedents.** Use plural subjects to avoid gendered singular pronouns.
+- Wrong: "A developer configures his settings."
+- Right: "Developers configure their settings."
+
+---
+
+## Sentences
+
+**Maximum 25 words per sentence.** Shorter is better. One main idea per sentence. Never combine two actions or two concepts in one sentence.
+
+**Vary sentence length.** Mix short sentences (around 8 words) with longer ones (up to 25 words). Uniform sentence length reads as robotic.
+
+**If/then construction.** Every "if" clause must include "then" in the predicate. No exceptions.
+- Wrong: "If you need updates, use Option A."
+- Right: "If you need updates, then use Option A."
+
+**Avoid "where" to connect clauses.** Use "because," "since," or "so" instead.
+- Wrong: "Teams maintain duplicate codebases where maintenance costs double."
+- Right: "Teams maintain duplicate codebases, so maintenance costs double."
+
+**Avoid nested clauses.** When a simpler structure works, use it.
+- Nested: "The API, which requires authentication, which you set up in the previous step, returns a JSON response."
+- Simpler: "The API requires authentication. Set it up in the previous step. It returns a JSON response."
+
+**Sentence starters.** Occasionally start sentences with "And" or "But" when it creates natural flow.
+
+**Capitalize after a colon** when a full sentence follows. Use lowercase when what follows is a phrase or fragment.
+
+**Abbreviations.** Never use "e.g." Write "for example" in full. Never use "i.e." Write "that is" in full.
+
+**Numbers.** Spell out numbers one through nine. Use numerals for 10 and above.
+
+**Dates.** Use ISO 8601 format for timestamps: YYYY-MM-DDTHH:MM:SSZ.
+
+---
+
+## Em-dashes
+
+Use em-dashes when they improve clarity, emphasis, or flow. Don't use them automatically or because they appear frequently in AI-generated text.
+
+**When to use an em-dash:**
+- You want to add a quick clarification mid-sentence.
+- You want a deliberate pause or break in thought.
+- You want stronger emphasis than a comma or parentheses provides.
+
+**When to skip the em-dash:**
+- A period is cleaner.
+- A comma is enough.
+- A colon gives a clearer lead-in.
+- The sentence reads more naturally without it.
+
+Prefer periods, commas, or colons when they read more cleanly. Choose the punctuation that makes the sentence easiest to scan and understand.
+
+---
+
+## Paragraphs
+
+- Keep paragraphs to two to three sentences for online documentation. Longer paragraphs create unnecessary cognitive load for readers who are scanning.
+- Every heading must have at least one paragraph beneath it. Never stack headings.
+- No paragraph should begin with a mechanical transition (see the banned transitions list).
+
+---
+
+## Headings
+
+**Sentence case** for all headings (H1 through H6). No title case.
+
+**Hierarchy.** Every page has one H1 that states the topic clearly. Use H2 and H3 to break content into scannable sections. Never skip heading levels. Start with H2 on pages after H1.
+
+**Never use bold text as a heading.** Use proper heading markup.
+
+**Every heading must be followed by a description paragraph** before any list, table, or code block appears.
+
+**Naming conventions by content type:**
+- How-to guides: bare infinitive ("Connect the device to the network")
+- Tutorials: bare infinitive ("Log your first request")
+- Get started: bare infinitive ("Get started" is the only permitted exception)
+- Concepts: noun phrase ("Alert types," "Architecture overview")
+- Reference: noun phrase ("GitHub Issues API reference")
+
+**One grammatical pattern per navigation level.** Don't mix imperative verbs with noun phrases at the same heading level.
+
+**Minimise parentheses in headings.** If the content in parentheses matters, integrate it into the heading. If it doesn't, remove it.
+
+**Sidebar naming.** Use brief, user-facing labels: Dashboard, Projects, Billing, Team, Settings. Avoid: General, Resources, Miscellaneous, Admin Stuff, Other.
+
+---
+
+## Lists
+
+- **Bullet lists** for unordered information. **Numbered lists** for sequences only.
+- Every list needs at least two items.
+- Format four or more related items as a list, not prose.
+- Keep list items parallel in structure.
+- **Periods** on full-sentence items. No periods on phrases or fragments. Apply consistently across all items in the same list.
+- Mixed-structure items (definition label plus full sentences): use a period at the end, lowercase after the colon.
+- Never use a numbered list for unordered information.
+
+---
+
+## Steps
+
+- Each step is one clear action. Never combine two actions in one step.
+- If a step produces a visible result, describe it in the line immediately after the step. System responses are not steps. Don't number them.
+- Steps belong inside a numbered list under one procedure heading. Don't give each step its own H2 heading.
+- Use **"Select"** for all UI interactions. Never use "click."
+- Use the exact UI label when it's clear on its own: "Select **Save**."
+- If the UI label would be repetitive or ambiguous, add the control type: "Select the **Select** button."
+- Use **"Enter"** for form fields. Never use "add" for form fields.
+
+---
+
+## Code
+
+- **Specify the language** after every code fence. Never leave a bare set of backticks.
+- **No $ before commands.** The $ suggests a specific shell and confuses Windows users.
+  - Wrong: `$ npm install openai`
+  - Right: `npm install openai`
+- **Placeholders in ALL CAPS:** `HELICONE_API_KEY=YOUR-API-KEY`
+- **Comment out expected output** in code blocks using # so developers know it's not a command.
+- **Provide explanatory text before every code block.** Never drop a code block directly under a heading with no prose between them.
+- **Inline code** for all technical terms in prose: parameter names, field names, header names, file names, status codes, environment variables, and any string the developer types or copies.
+- Every code example must be complete, tested, and easy to adapt. Never include broken or untested examples.
+- Always show both the request and the expected response together so readers know what to expect.
+- Provide multi-language support where your tool supports multiple languages.
+
+---
+
+## UI text and bold
+
+- **Bold all UI labels, buttons, field names, and selectable elements.** No quotation marks around them.
+- **Don't overuse bold.** Reserve it for UI elements and critical terms only. Bold used for general emphasis loses its meaning.
+- **Place colons outside bold formatting**, not inside.
+  - Right: `**Add widgets**:`
+  - Wrong: `**Add widgets:**`
+- **Match UI labels exactly**, including capitalisation, as they appear in the live product.
+- **For error messages:** quote the message exactly, then explain what it means and what the developer should do next.
+
+**Italics.** Use sparingly.
+- Permitted: introducing a term you define in the same sentence (first mention only); strong emphasis when importance would be lost without it (at most once or twice per page).
+- Not permitted: UI labels, general emphasis, repeating a term after you've already defined it.
+- In Markdown: use underscores for italics (`_like this_`) and `**` for bold (not `__`).
+
+**Run-in labels.** When a list item starts with a short bold label and a colon, place the colon outside the bold formatting.
+- Right: `**Scenario 1**: description`
+- Wrong: `**Scenario 1:** description`
+
+---
+
+## Links and signposting
+
+**Inline linking is the default.** Embed links naturally as part of the sentence.
+- Wrong: "For more information, see the [Authentication guide](#)."
+- Right: "Configure your API key using the steps in the [Authentication guide](#)."
+
+**No "click here" or raw URLs as link text.**
+- Wrong: "Click [here](#) to read the guide."
+- Right: "Read the [setup guide](#) before continuing."
+
+**"See" is acceptable only when:**
+- The reference is the subject of the sentence.
+- You're flagging a major topic shift.
+- The linked content is a warning or prerequisite.
+
+**Cross-links** appear at the point where the developer needs them, not only at the end of the page.
+
+**Transitions between sections:**
+- Conceptual content: use a short transition (one to two sentences) before each new heading.
+- Task-based and reference content: no transitions between sections. Each section opens with a direct statement and stands on its own.
+- Test: if removing the sentence between two sections leaves both sections fully clear, the sentence doesn't belong.
+
+**Reference lists** at the end of a page need an introductory sentence. Don't drop a bare list of links with no context.
+
+---
+
+## Notes, warnings, and tables
+
+**Callout types:**
+- **Note:** information that prevents a common mistake, enforces an important rule, or corrects a likely misunderstanding.
+- **Warning:** actions that are irreversible or have significant consequences.
+- **Tip:** optional shortcuts or best practices that help but aren't required.
+- **Info:** contextual background the reader should be aware of but doesn't need to act on immediately.
+
+**Placement.** Place callouts immediately after the step or statement they relate to. Don't group them at the top of the page.
+
+**Don't overuse callouts.** If every other step has a note, none of them stand out. Use them strategically.
+
+**Tables.** Use for parameter lists, option comparisons, and reference data. Don't use for layout. Keep headers short and descriptive. Every table needs a description paragraph above it.
+
+---
+
+## Document limitations inline
+
+Document known limitations where users will encounter them, not only in a separate troubleshooting section.
+- Wrong: burying a limitation in a troubleshooting section the user may never read.
+- Right: "This endpoint returns a maximum of 100 results per request. Use the `cursor` parameter to paginate through larger datasets."
+
+An omission is better than an error. If you can't verify a claim, don't include it.
+
+---
+
+## Banned words
+
+Never use these in any documentation. No exceptions.
+
+Foster, Revolutionize, Landscape, Seamless, Robust, Streamline, Delve, Elevate, Facilitate, Groundbreaking, Comprehensive.
+
+---
+
+## Banned phrases
+
+- "Dives deep" / "Deep dive"
+- "This is where X comes in"
+- "X is not just about; it's about"
+- "X isn't just nice to have; it's..."
+- "You're not alone"
+- "Thrive in a fast-paced environment"
+- "The following" as a vague introducer
+- "Click here"
+- "See X for Y" as a lazy signpost
+
+---
+
+## Banned transitions
+
+Never use these to open a paragraph or section:
+
+Additionally, Furthermore, Moreover, In conclusion, To summarise, In summary, As mentioned above, As previously stated.
+
+---
+
+## Use sparingly
+
+Use each of these a maximum of two to three times per page:
+
+Ensure, Enhance, Significant / significantly, Effective / effectively, Essential.
+
+---
+
+## Microsoft Writing Style Guide key principles
+
+1. Write like you speak: natural, conversational, and friendly.
+2. Get to the point fast: start with the key takeaway.
+3. Be concise: fewer words are better.
+4. No jargon: friendly, conversational, and helpful.
+5. Use contractions: "it's," "you're," "don't."
+6. Lead with what's important: put keywords up front.
+7. No fluff: remove excess words and get to the point.
+8. Use sentence case: not title case for headings.
+9. Use active voice and indicative mood most of the time.
+10. Use imperative mood in procedures.
+
+**Writing tips:**
+- Use simple sentence structure: subject + verb + object.
+- Use one word for a concept and use it consistently. Don't use synonyms to refer to the same concept.
+- Avoid idioms, colloquial expressions, and culture-specific references.
+- Avoid modifier stacks (long chains of modifying words before a noun).
+- Keep adjectives and adverbs close to the words they modify.
+- Avoid linking more than three phrases with coordinate conjunctions.
+- Add a determiner (a, an, the, this) before nouns to avoid ambiguity.
+- Don't break up steps with commentary or asides.

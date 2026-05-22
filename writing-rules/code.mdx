@@ -1,6 +1,7 @@
 ---
 title: "Code"
 description: "Rules for code blocks, inline code, placeholders, and example requests."
+icon: "code"
 ---
 
 ## Code blocks
@@ -8,15 +9,13 @@ description: "Rules for code blocks, inline code, placeholders, and example requ
 Specify the language after every code fence. Never leave a bare set of backticks.
 
 <CodeGroup>
-```bash Right — language specified
+```bash Right
 npm install openai
 ```
 
-````text Wrong — no language
-```
+```text Wrong
 npm install openai
 ```
-````
 </CodeGroup>
 
 ## No dollar sign before commands
@@ -59,24 +58,18 @@ git lfs track "*.png"
 Provide explanatory text before every code block. Never drop a code block directly under a heading with no prose between them.
 
 <CodeGroup>
-```text Wrong — code block immediately after heading
-
+```text Wrong
 ## Install the package
 
-```bash
 npm install @openai/sdk
 ```
-```
 
-```text Right — prose before code block
-
+```text Right
 ## Install the package
 
 Run the following command to add the SDK to your project.
 
-```bash
 npm install @openai/sdk
-```
 ```
 </CodeGroup>
 
