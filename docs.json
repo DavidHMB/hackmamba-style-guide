@@ -15,7 +15,7 @@
   "background": {
     "style": "gradient",
     "color": {
-      "dark": "#0A0517",
+      "dark": "#000000",
       "light": "#F9F6FF"
     }
   },
